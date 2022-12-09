@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">NewsApp</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="science">Science</string>
+    <string name="national_news">National News</string>
+    <string name="latest_news">Latest News</string>
+    <string name="entertainment">Entertainment</string>
+    <string name="technology">Technology</string>
+    <string name="politics">Politics</string>
+    <string name="world">World</string>
+    <string name="sports">Sports</string>
+    <string name="business">Business</string>
+    <string name="national">National</string>
+    <string name="all">All</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
