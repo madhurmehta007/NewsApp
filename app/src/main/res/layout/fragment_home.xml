@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/homeContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
@@ -38,6 +39,7 @@
             android:layout_height="match_parent"
             android:paddingHorizontal="20dp"
             android:paddingVertical="5dp"
+            android:fontFamily="@font/sofiaprosoftmedium"
             android:text="@string/all"
             android:textColor="@color/white"
             android:textSize="20sp" />
@@ -57,6 +59,7 @@
             android:layout_height="match_parent"
             android:paddingHorizontal="20dp"
             android:paddingVertical="5dp"
+            android:fontFamily="@font/sofiaprosoftmedium"
             android:text="@string/national"
             android:textColor="@color/white"
             android:textSize="20sp" />
@@ -76,6 +79,7 @@
             android:layout_height="match_parent"
             android:paddingHorizontal="20dp"
             android:paddingVertical="5dp"
+            android:fontFamily="@font/sofiaprosoftmedium"
             android:text="@string/business"
             android:textColor="@color/white"
             android:textSize="20sp" />
@@ -95,6 +99,7 @@
             android:layout_height="match_parent"
             android:paddingHorizontal="20dp"
             android:paddingVertical="5dp"
+            android:fontFamily="@font/sofiaprosoftmedium"
             android:text="@string/sports"
             android:textColor="@color/white"
             android:textSize="20sp" />
@@ -114,6 +119,7 @@
             android:layout_height="match_parent"
             android:paddingHorizontal="20dp"
             android:paddingVertical="5dp"
+            android:fontFamily="@font/sofiaprosoftmedium"
             android:text="@string/world"
             android:textColor="@color/white"
             android:textSize="20sp" />
@@ -133,6 +139,7 @@
             android:layout_height="match_parent"
             android:paddingHorizontal="20dp"
             android:paddingVertical="5dp"
+            android:fontFamily="@font/sofiaprosoftmedium"
             android:text="@string/politics"
             android:textColor="@color/white"
             android:textSize="20sp" />
@@ -152,6 +159,7 @@
             android:layout_height="match_parent"
             android:paddingHorizontal="20dp"
             android:paddingVertical="5dp"
+            android:fontFamily="@font/sofiaprosoftmedium"
             android:text="@string/technology"
             android:textColor="@color/white"
             android:textSize="20sp" />
@@ -171,6 +179,7 @@
             android:layout_height="match_parent"
             android:paddingHorizontal="20dp"
             android:paddingVertical="5dp"
+            android:fontFamily="@font/sofiaprosoftmedium"
             android:text="@string/entertainment"
             android:textColor="@color/white"
             android:textSize="20sp" />
@@ -190,6 +199,7 @@
             android:layout_height="match_parent"
             android:paddingHorizontal="20dp"
             android:paddingVertical="5dp"
+            android:fontFamily="@font/sofiaprosoftmedium"
             android:text="@string/science"
             android:textColor="@color/white"
             android:textSize="20sp" />

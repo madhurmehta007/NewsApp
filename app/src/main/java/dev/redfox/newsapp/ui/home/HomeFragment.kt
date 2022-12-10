@@ -1,17 +1,16 @@
 package dev.redfox.newsapp.ui.home
 
+import dev.redfox.newsapp.R
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import com.google.android.material.card.MaterialCardView
 import dev.redfox.newsapp.adapters.NewsAdapter
 import dev.redfox.newsapp.databinding.FragmentHomeBinding
 import dev.redfox.newsapp.models.Data
@@ -19,7 +18,6 @@ import dev.redfox.newsapp.networking.Repository
 
 private lateinit var homeViewModel: HomeViewModel
 private lateinit var newsAdapter: NewsAdapter
-
 
 class HomeFragment : Fragment() {
 
@@ -88,6 +86,7 @@ class HomeFragment : Fragment() {
             DisplayNews()
         }
 
+
         return binding.root
     }
 
@@ -106,6 +105,16 @@ class HomeFragment : Fragment() {
             binding.rvNewsHome.adapter = adapter
             binding.rvNewsHome.layoutManager = GridLayoutManager(context, 1)
             adapter.notifyDataSetChanged()
+
+
+            newsAdapter.onItemClick = {
+                val dialog = NewsDetailFragment(it)
+
+//            val bottomSheetView = inflater.inflate(R.layout.fragment_news_detail,null)
+
+                dialog.setCancelable(true)
+                dialog.show(parentFragmentManager,"NewsBottomSheetDialog")
+            }
 
         })
     }
