@@ -146,9 +146,12 @@ class HomeFragment : Fragment() {
 
     @SuppressLint("NotifyDataSetChanged")
     private fun DisplayNews() {
+
+        var loadProgress = binding.shimmerEffectHome
         homeViewModel.newsResponse.observe(viewLifecycleOwner, Observer {
             val nData: MutableList<Data> = it.body()?.data as MutableList<Data>
 
+            loadProgress.visibility = View.GONE
             Log.d("statusCode", it.code().toString())
 
             newsAdapter = NewsAdapter(newsDBViewModel,requireContext(),nData)

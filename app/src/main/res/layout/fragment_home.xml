@@ -245,6 +245,28 @@
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+  
+  <com.facebook.shimmer.ShimmerFrameLayout
+      android:id="@+id/shimmerEffectHome"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+android:foregroundGravity="center"
+      android:layout_marginTop="10dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/tvNationalNews"
+      >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+      <include layout="@layout/shimmer_placeholder_home"/>
+      <include layout="@layout/shimmer_placeholder_home"/>
+      <include layout="@layout/shimmer_placeholder_home"/>
+      <include layout="@layout/shimmer_placeholder_home"/>
+      <include layout="@layout/shimmer_placeholder_home"/>
+    </LinearLayout>
+  </com.facebook.shimmer.ShimmerFrameLayout>
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="0dp"
@@ -256,6 +278,7 @@
       android:id="@+id/rvNewsHome"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
+      tools:listitem="@layout/item_home_news"
       android:paddingHorizontal="10dp"
       android:layout_marginBottom="50dp"/>
 </LinearLayout>

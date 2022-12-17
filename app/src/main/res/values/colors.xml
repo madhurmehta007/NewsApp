@@ -14,6 +14,8 @@
     <color name="material_blue_light">#D7D5F6FF</color>
     <color name="tranparent">#00FFFFFF</color>
     <color name="blueMain">#0668E1</color>
+    <color name="transparent">#00FFFFFF</color>
+
 
     <!--SnackBar Colors-->
     <color name="colorSuccess">#4caf50</color>
