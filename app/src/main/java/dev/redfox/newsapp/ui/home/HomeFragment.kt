@@ -1,6 +1,6 @@
 package dev.redfox.newsapp.ui.home
 
-import dev.redfox.newsapp.R
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -9,14 +9,19 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import dev.redfox.newsapp.adapters.NewsAdapter
+import dev.redfox.newsapp.database.NewsDBViewModel
+import dev.redfox.newsapp.database.NewsDBViewModelFactory
+import dev.redfox.newsapp.database.NewsRepository
+import dev.redfox.newsapp.database.NewsRoomDatabase
 import dev.redfox.newsapp.databinding.FragmentHomeBinding
 import dev.redfox.newsapp.models.Data
 import dev.redfox.newsapp.networking.Repository
+import kotlinx.coroutines.*
 
 private lateinit var homeViewModel: HomeViewModel
+private lateinit var newsDBViewModel: NewsDBViewModel
 private lateinit var newsAdapter: NewsAdapter
 
 class HomeFragment : Fragment() {
@@ -28,75 +33,125 @@ class HomeFragment : Fragment() {
         Repository()
     }
 
+    private val database by lazy {
+        NewsRoomDatabase.getNewsDatabase(requireContext())
+    }
+
+   private val newsRepository :NewsRepository by lazy {
+       NewsRepository(database.newsDao())
+   }
+
+    @OptIn(DelicateCoroutinesApi::class)
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
+
     ): View {
+
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
 
          homeViewModel =
             ViewModelProvider(this,HomeViewModelFactory(repository))[HomeViewModel::class.java]
 
+        newsDBViewModel =
+            ViewModelProvider(this,NewsDBViewModelFactory(newsRepository))[NewsDBViewModel::class.java]
         homeViewModel.getNews("all")
         DisplayNews()
 
         binding.cvAll.setOnClickListener {
             homeViewModel.getNews("all")
-            DisplayNews()
+            GlobalScope.launch {
+                withContext(Dispatchers.Main){
+                    DisplayNews()
+                }
+            }
         }
 
         binding.cvNational.setOnClickListener {
             homeViewModel.getNews("national")
-            DisplayNews()
+            GlobalScope.launch {
+                withContext(Dispatchers.Main){
+                    DisplayNews()
+                }
+            }
         }
 
         binding.cvBusiness.setOnClickListener {
             homeViewModel.getNews("business")
-            DisplayNews()
+            GlobalScope.launch {
+                withContext(Dispatchers.Main){
+                    DisplayNews()
+                }
+            }
         }
 
         binding.cvSports.setOnClickListener {
             homeViewModel.getNews("sports")
-            DisplayNews()
+            GlobalScope.launch {
+                withContext(Dispatchers.Main){
+                    DisplayNews()
+                }
+            }
         }
 
         binding.cvWorld.setOnClickListener {
             homeViewModel.getNews("world")
-            DisplayNews()
+            GlobalScope.launch {
+                withContext(Dispatchers.Main){
+                    DisplayNews()
+                }
+            }
         }
 
         binding.cvEntertainment.setOnClickListener {
             homeViewModel.getNews("entertainment")
-            DisplayNews()
+            GlobalScope.launch {
+                withContext(Dispatchers.Main){
+                    DisplayNews()
+                }
+            }
         }
 
         binding.cvPolitics.setOnClickListener {
             homeViewModel.getNews("politics")
-            DisplayNews()
+            GlobalScope.launch {
+                withContext(Dispatchers.Main){
+                    DisplayNews()
+                }
+            }
         }
 
         binding.cvScience.setOnClickListener {
             homeViewModel.getNews("science")
-            DisplayNews()
+            GlobalScope.launch {
+                withContext(Dispatchers.Main){
+                    DisplayNews()
+                }
+            }
         }
 
         binding.cvTech.setOnClickListener {
             homeViewModel.getNews("technology")
-            DisplayNews()
+            GlobalScope.launch {
+                withContext(Dispatchers.Main){
+                    DisplayNews()
+                }
+            }
         }
 
 
         return binding.root
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private fun DisplayNews() {
         homeViewModel.newsResponse.observe(viewLifecycleOwner, Observer {
             val nData: MutableList<Data> = it.body()?.data as MutableList<Data>
 
             Log.d("statusCode", it.code().toString())
 
-            newsAdapter = NewsAdapter(nData)
+            newsAdapter = NewsAdapter(newsDBViewModel,requireContext(),nData)
 
             var adapter = newsAdapter
 
@@ -109,15 +164,14 @@ class HomeFragment : Fragment() {
 
             newsAdapter.onItemClick = {
                 val dialog = NewsDetailFragment(it)
-
-//            val bottomSheetView = inflater.inflate(R.layout.fragment_news_detail,null)
-
                 dialog.setCancelable(true)
                 dialog.show(parentFragmentManager,"NewsBottomSheetDialog")
             }
 
         })
     }
+
+
 
     override fun onDestroyView() {
         super.onDestroyView()

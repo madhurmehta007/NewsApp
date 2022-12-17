@@ -17,7 +17,6 @@ class HomeViewModel(private val repository: Repository) : ViewModel() {
             _newsResponse.value = nResponse
         }
     }
-
 }
 
 @Suppress("UNCHECKED_CAST")

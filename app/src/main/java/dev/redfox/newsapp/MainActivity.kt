@@ -1,17 +1,12 @@
 package dev.redfox.newsapp
 
 import android.os.Bundle
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
 import dev.redfox.newsapp.databinding.ActivityMainBinding
 import dev.redfox.newsapp.ui.dashboard.DashboardFragment
 import dev.redfox.newsapp.ui.home.HomeFragment
-import dev.redfox.newsapp.ui.notifications.NotificationsFragment
+import dev.redfox.newsapp.ui.saved.SavedNewsFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -29,8 +24,7 @@ class MainActivity : AppCompatActivity() {
 
             when(it.itemId) {
                 R.id.navigation_home -> replaceFragment(HomeFragment())
-                R.id.navigation_dashboard -> replaceFragment(DashboardFragment())
-                R.id.navigation_notifications -> replaceFragment(NotificationsFragment())
+                R.id.navigation_notifications -> replaceFragment(SavedNewsFragment())
 
                 else -> {}
 

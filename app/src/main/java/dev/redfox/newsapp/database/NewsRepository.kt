@@ -6,7 +6,6 @@ import androidx.lifecycle.LiveData
 class NewsRepository(private val newsDao: NewsDao) {
     val allNewsLists:LiveData<MutableList<News>> = newsDao.getAllNews()
 
-
     @WorkerThread
     fun insertNews(news: News) {
         newsDao.insertNews(news)
