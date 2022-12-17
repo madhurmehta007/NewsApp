@@ -19,12 +19,6 @@
     </fragment>
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="dev.redfox.newsapp.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
-
-    <fragment
         android:id="@+id/navigation_newsDetail"
         android:name="dev.redfox.newsapp.ui.home.NewsDetailFragment"
         android:label="NewsDetailFragment"

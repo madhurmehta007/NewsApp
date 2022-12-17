@@ -13,7 +13,8 @@
       android:layout_height="wrap_content"
       android:animateLayoutChanges="true"
       android:animationCache="true"
-      android:layout_marginTop="10dp"
+      android:paddingVertical="10dp"
+      android:background="@color/blueMain"
       android:scrollbars="none"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
@@ -25,10 +26,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-      <androidx.cardview.widget.CardView
+      <com.google.android.material.card.MaterialCardView
           android:id="@+id/cvAll"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
+          app:strokeColor="@color/white"
+          app:rippleColor="#99FFFFFF"
+          app:strokeWidth="0.9dp"
           android:layout_gravity="center"
           android:layout_marginHorizontal="5dp"
           android:backgroundTint="@color/blueMain"
@@ -43,15 +47,18 @@
             android:text="@string/all"
             android:textColor="@color/white"
             android:textSize="20sp" />
-      </androidx.cardview.widget.CardView>
+      </com.google.android.material.card.MaterialCardView>
 
-      <androidx.cardview.widget.CardView
+      <com.google.android.material.card.MaterialCardView
           android:id="@+id/cvNational"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_gravity="center"
+          app:strokeColor="@color/white"
+          app:rippleColor="#99FFFFFF"
+          app:strokeWidth="0.9dp"
           android:layout_marginHorizontal="5dp"
-          android:backgroundTint="@color/material_blue"
+          android:backgroundTint="@color/blueMain"
           app:cardCornerRadius="20dp">
 
         <TextView
@@ -63,13 +70,16 @@
             android:text="@string/national"
             android:textColor="@color/white"
             android:textSize="20sp" />
-      </androidx.cardview.widget.CardView>
+      </com.google.android.material.card.MaterialCardView>
 
-      <androidx.cardview.widget.CardView
+      <com.google.android.material.card.MaterialCardView
           android:id="@+id/cvBusiness"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_gravity="center"
+          app:strokeColor="@color/white"
+          app:rippleColor="#99FFFFFF"
+          app:strokeWidth="0.9dp"
           android:layout_marginHorizontal="5dp"
           android:backgroundTint="@color/blueMain"
           app:cardCornerRadius="15dp">
@@ -83,15 +93,18 @@
             android:text="@string/business"
             android:textColor="@color/white"
             android:textSize="20sp" />
-      </androidx.cardview.widget.CardView>
+      </com.google.android.material.card.MaterialCardView>
 
-      <androidx.cardview.widget.CardView
+      <com.google.android.material.card.MaterialCardView
           android:id="@+id/cvSports"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_gravity="center"
+          app:strokeColor="@color/white"
+          app:rippleColor="#99FFFFFF"
+          app:strokeWidth="0.9dp"
           android:layout_marginHorizontal="5dp"
-          android:backgroundTint="@color/material_blue"
+          android:backgroundTint="@color/blueMain"
           app:cardCornerRadius="15dp">
 
         <TextView
@@ -103,13 +116,16 @@
             android:text="@string/sports"
             android:textColor="@color/white"
             android:textSize="20sp" />
-      </androidx.cardview.widget.CardView>
+      </com.google.android.material.card.MaterialCardView>
 
-      <androidx.cardview.widget.CardView
+      <com.google.android.material.card.MaterialCardView
           android:id="@+id/cvWorld"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_gravity="center"
+          app:strokeColor="@color/white"
+          app:rippleColor="#99FFFFFF"
+          app:strokeWidth="0.9dp"
           android:layout_marginHorizontal="5dp"
           android:backgroundTint="@color/blueMain"
           app:cardCornerRadius="15dp">
@@ -123,15 +139,18 @@
             android:text="@string/world"
             android:textColor="@color/white"
             android:textSize="20sp" />
-      </androidx.cardview.widget.CardView>
+      </com.google.android.material.card.MaterialCardView>
 
-      <androidx.cardview.widget.CardView
+      <com.google.android.material.card.MaterialCardView
           android:id="@+id/cvPolitics"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_gravity="center"
+          app:strokeColor="@color/white"
+          app:rippleColor="#99FFFFFF"
+          app:strokeWidth="0.9dp"
           android:layout_marginHorizontal="5dp"
-          android:backgroundTint="@color/material_blue"
+          android:backgroundTint="@color/blueMain"
           app:cardCornerRadius="15dp">
 
         <TextView
@@ -143,13 +162,16 @@
             android:text="@string/politics"
             android:textColor="@color/white"
             android:textSize="20sp" />
-      </androidx.cardview.widget.CardView>
+      </com.google.android.material.card.MaterialCardView>
 
-      <androidx.cardview.widget.CardView
+      <com.google.android.material.card.MaterialCardView
           android:id="@+id/cvTech"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_gravity="center"
+          app:strokeColor="@color/white"
+          app:rippleColor="#99FFFFFF"
+          app:strokeWidth="0.9dp"
           android:layout_marginHorizontal="5dp"
           android:backgroundTint="@color/blueMain"
           app:cardCornerRadius="15dp">
@@ -163,15 +185,18 @@
             android:text="@string/technology"
             android:textColor="@color/white"
             android:textSize="20sp" />
-      </androidx.cardview.widget.CardView>
+      </com.google.android.material.card.MaterialCardView>
 
-      <androidx.cardview.widget.CardView
+      <com.google.android.material.card.MaterialCardView
           android:id="@+id/cvEntertainment"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_gravity="center"
+          app:strokeColor="@color/white"
+          app:rippleColor="#99FFFFFF"
+          app:strokeWidth="0.9dp"
           android:layout_marginHorizontal="5dp"
-          android:backgroundTint="@color/material_blue"
+          android:backgroundTint="@color/blueMain"
           app:cardCornerRadius="15dp">
 
         <TextView
@@ -183,13 +208,16 @@
             android:text="@string/entertainment"
             android:textColor="@color/white"
             android:textSize="20sp" />
-      </androidx.cardview.widget.CardView>
+      </com.google.android.material.card.MaterialCardView>
 
-      <androidx.cardview.widget.CardView
+      <com.google.android.material.card.MaterialCardView
           android:id="@+id/cvScience"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_gravity="center"
+          app:strokeColor="@color/white"
+          app:rippleColor="#99FFFFFF"
+          app:strokeWidth="0.9dp"
           android:layout_marginHorizontal="5dp"
           android:backgroundTint="@color/blueMain"
           app:cardCornerRadius="15dp">
@@ -203,7 +231,7 @@
             android:text="@string/science"
             android:textColor="@color/white"
             android:textSize="20sp" />
-      </androidx.cardview.widget.CardView>
+      </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
   </HorizontalScrollView>
 
@@ -212,7 +240,7 @@
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:text="@string/latest_news"
-      android:layout_marginVertical="20dp"
+      android:layout_marginVertical="10dp"
       android:paddingHorizontal="15dp"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
@@ -220,6 +248,7 @@
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="0dp"
+    android:layout_marginTop="10dp"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/tvNationalNews">

@@ -11,8 +11,10 @@
         android:layout_height="wrap_content"
         app:backgroundTint="@color/white"
         app:itemIconTint="@color/black"
+        android:clickable="true"
+       app:itemActiveIndicatorStyle="@color/material_blue"
         app:itemTextColor="@color/black"
-        app:itemRippleColor="@color/purple_200"
+        app:itemRippleColor="@color/material_blue"
         android:layout_alignParentBottom="true"
         app:menu="@menu/bottom_nav_menu" />
 

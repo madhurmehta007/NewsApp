@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        window.setStatusBarColor(this.getResources().getColor(R.color.material_blue_light))
+        window.setStatusBarColor(this.getResources().getColor(R.color.blueMain))
         replaceFragment(HomeFragment())
 
         binding.navView.setOnItemSelectedListener {

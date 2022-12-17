@@ -14,8 +14,6 @@ import dev.redfox.newsapp.R
 import dev.redfox.newsapp.database.*
 import dev.redfox.newsapp.databinding.ItemHomeNewsBinding
 import dev.redfox.newsapp.models.Data
-import dev.redfox.newsapp.ui.home.HomeViewModel
-import dev.redfox.newsapp.ui.home.NewsDetailFragment
 import dev.redfox.newsapp.utils.Snacker
 
 
@@ -80,6 +78,7 @@ val context: Context,
             holder.binding.ivSaveBorder.visibility = View.VISIBLE
         }
 
+        holder.binding.cvHomeNews.animation = android.view.animation.AnimationUtils.loadAnimation(holder.itemView.context,R.anim.setting_anim)
 
     }
 

@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.Recycler
 import com.squareup.picasso.Picasso
+import dev.redfox.newsapp.R
 import dev.redfox.newsapp.database.News
 import dev.redfox.newsapp.database.NewsDBViewModel
 import dev.redfox.newsapp.databinding.FragmentSavedNewsBinding
@@ -39,6 +40,9 @@ class SavedNewsAdapter(
         Picasso.get().load(item.imageUrl).into(holder.binding.newsImage)
         holder.binding.tvDate.text = item.date
         holder.binding.tvNews.text = item.title
+
+        holder.binding.cvSavedNews.animation = android.view.animation.AnimationUtils.loadAnimation(holder.itemView.context,
+            R.anim.setting_anim)
     }
 
     class NewsViewHolder(val binding: ItemSavedNewsBinding, context: Context) :

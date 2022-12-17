@@ -7,11 +7,13 @@
     android:layout_height="wrap_content"
     android:padding="5dp">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvHomeNews"
         android:layout_width="match_parent"
         android:layout_height="120dp"
         android:backgroundTint="@color/material_blue_light"
+        app:strokeColor="@color/material_blue"
+        app:strokeWidth="0.5dp"
         android:outlineAmbientShadowColor="@color/material_blue_light"
         android:outlineSpotShadowColor="@color/material_blue_light"
         android:layout_gravity="center"
@@ -112,5 +114,5 @@
 
 </LinearLayout>
 
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 </LinearLayout>
