@@ -14,6 +14,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import dev.redfox.newsapp.adapters.SavedNewsAdapter
 import dev.redfox.newsapp.database.*
 import dev.redfox.newsapp.databinding.FragmentSavedNewsBinding
+import dev.redfox.newsapp.models.Data
+import dev.redfox.newsapp.ui.home.NewsDetailFragment
+
 
 class SavedNewsFragment : Fragment() {
 
@@ -55,6 +58,12 @@ class SavedNewsFragment : Fragment() {
             binding.rvSavedNews.layoutManager = GridLayoutManager(context, 2)
             adapter.notifyDataSetChanged()
 
+
+            savedNewsAdapter.onItemClick = {
+                val dialog = SavedNewsDetailFragment(it)
+                dialog.setCancelable(true)
+                dialog.show(parentFragmentManager, "NewsBottomSheetDialog")
+            }
 
         })
         return binding.root

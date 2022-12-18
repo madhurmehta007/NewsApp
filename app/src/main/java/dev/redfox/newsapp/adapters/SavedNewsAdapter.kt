@@ -33,6 +33,7 @@ class SavedNewsAdapter(
 ) :
     RecyclerView.Adapter<SavedNewsAdapter.NewsViewHolder>() {
 
+    var onItemClick:((News) -> Unit)? = null
     var onItemLongClick: ((News) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
@@ -70,6 +71,10 @@ class SavedNewsAdapter(
                 .show()
 
             true
+        }
+
+        holder.itemView.setOnClickListener {
+            onItemClick?.invoke(item)
         }
 
     }

@@ -48,6 +48,7 @@ class NewsAdapter(
         holder.binding.tvNews.text = news.title
         Picasso.get().load(news.imageUrl).into(holder.binding.newsImage)
         holder.binding.tvDate.text = news.date
+        holder.binding.tvTime.text = news.time
 
         holder.binding.tvNews.setOnClickListener() {
             onItemClick?.invoke(news)

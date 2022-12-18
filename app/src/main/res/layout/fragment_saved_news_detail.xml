@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_marginHorizontal="10dp"
     android:paddingBottom="20dp"
-    tools:context=".ui.home.NewsDetailFragment">
+    tools:context=".ui.saved.SavedNewsDetailFragment">
 
     <TextView
         android:layout_width="80dp"
