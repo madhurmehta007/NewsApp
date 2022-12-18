@@ -20,17 +20,18 @@ import dev.redfox.newsapp.utils.Snacker
 private lateinit var newsRepository: NewsRepository
 
 class NewsAdapter(
-val newsDBViewModel: NewsDBViewModel,
-val context: Context,
-    val newsList:MutableList<Data>
-    ):
+    val newsDBViewModel: NewsDBViewModel,
+    val context: Context,
+    val newsList: MutableList<Data>
+) :
     RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
 
-    var onItemClick : ((Data) -> Unit)? = null
+    var onItemClick: ((Data) -> Unit)? = null
 
-        class NewsViewHolder(val binding:ItemHomeNewsBinding,context: Context):RecyclerView.ViewHolder(binding.root){
+    class NewsViewHolder(val binding: ItemHomeNewsBinding, context: Context) :
+        RecyclerView.ViewHolder(binding.root) {
 
-        }
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -48,11 +49,11 @@ val context: Context,
         Picasso.get().load(news.imageUrl).into(holder.binding.newsImage)
         holder.binding.tvDate.text = news.date
 
-        holder.binding.tvNews.setOnClickListener(){
+        holder.binding.tvNews.setOnClickListener() {
             onItemClick?.invoke(news)
         }
 
-        holder.binding.cvNews.setOnClickListener(){
+        holder.binding.cvNews.setOnClickListener() {
             onItemClick?.invoke(news)
         }
 
@@ -68,17 +69,21 @@ val context: Context,
                 date = news.date,
                 readMoreUrl = news.readMoreUrl
             )
-                newsDBViewModel.insertNews(newsData)
-            Snacker(it,"News saved to your list").success()
+            newsDBViewModel.insertNews(newsData)
+            Snacker(it, "News saved to your list").success()
 
         }
 
         holder.binding.ivSave.setOnClickListener {
             holder.binding.ivSave.visibility = View.GONE
             holder.binding.ivSaveBorder.visibility = View.VISIBLE
+
         }
 
-        holder.binding.cvHomeNews.animation = android.view.animation.AnimationUtils.loadAnimation(holder.itemView.context,R.anim.setting_anim)
+        holder.binding.cvHomeNews.animation = android.view.animation.AnimationUtils.loadAnimation(
+            holder.itemView.context,
+            R.anim.setting_anim
+        )
 
     }
 

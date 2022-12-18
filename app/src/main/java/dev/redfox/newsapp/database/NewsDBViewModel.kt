@@ -23,7 +23,7 @@ class NewsDBViewModel(private val repository: NewsRepository):ViewModel() {
     }
 
     fun updateNews(news: News) = scope.launch(Dispatchers.IO) {
-        repository.deleteNews(news)
+        repository.updateNews(news)
     }
 
     override fun onCleared() {

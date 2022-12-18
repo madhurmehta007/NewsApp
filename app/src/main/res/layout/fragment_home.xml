@@ -4,283 +4,300 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/homeContainer"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".ui.home.HomeFragment">
 
-  <HorizontalScrollView
-      android:id="@+id/horizontalScrollView"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:animateLayoutChanges="true"
-      android:animationCache="true"
-      android:paddingVertical="10dp"
-      android:background="@color/blueMain"
-      android:scrollbars="none"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent">
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-      <com.google.android.material.card.MaterialCardView
-          android:id="@+id/cvAll"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          app:strokeColor="@color/white"
-          app:rippleColor="#99FFFFFF"
-          app:strokeWidth="0.9dp"
-          android:layout_gravity="center"
-          android:layout_marginHorizontal="5dp"
-          android:backgroundTint="@color/blueMain"
-          app:cardCornerRadius="15dp">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingHorizontal="20dp"
-            android:paddingVertical="5dp"
-            android:fontFamily="@font/sofiaprosoftmedium"
-            android:text="@string/all"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
-      </com.google.android.material.card.MaterialCardView>
-
-      <com.google.android.material.card.MaterialCardView
-          android:id="@+id/cvNational"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_gravity="center"
-          app:strokeColor="@color/white"
-          app:rippleColor="#99FFFFFF"
-          app:strokeWidth="0.9dp"
-          android:layout_marginHorizontal="5dp"
-          android:backgroundTint="@color/blueMain"
-          app:cardCornerRadius="20dp">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingHorizontal="20dp"
-            android:paddingVertical="5dp"
-            android:fontFamily="@font/sofiaprosoftmedium"
-            android:text="@string/national"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
-      </com.google.android.material.card.MaterialCardView>
-
-      <com.google.android.material.card.MaterialCardView
-          android:id="@+id/cvBusiness"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_gravity="center"
-          app:strokeColor="@color/white"
-          app:rippleColor="#99FFFFFF"
-          app:strokeWidth="0.9dp"
-          android:layout_marginHorizontal="5dp"
-          android:backgroundTint="@color/blueMain"
-          app:cardCornerRadius="15dp">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingHorizontal="20dp"
-            android:paddingVertical="5dp"
-            android:fontFamily="@font/sofiaprosoftmedium"
-            android:text="@string/business"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
-      </com.google.android.material.card.MaterialCardView>
-
-      <com.google.android.material.card.MaterialCardView
-          android:id="@+id/cvSports"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_gravity="center"
-          app:strokeColor="@color/white"
-          app:rippleColor="#99FFFFFF"
-          app:strokeWidth="0.9dp"
-          android:layout_marginHorizontal="5dp"
-          android:backgroundTint="@color/blueMain"
-          app:cardCornerRadius="15dp">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingHorizontal="20dp"
-            android:paddingVertical="5dp"
-            android:fontFamily="@font/sofiaprosoftmedium"
-            android:text="@string/sports"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
-      </com.google.android.material.card.MaterialCardView>
-
-      <com.google.android.material.card.MaterialCardView
-          android:id="@+id/cvWorld"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_gravity="center"
-          app:strokeColor="@color/white"
-          app:rippleColor="#99FFFFFF"
-          app:strokeWidth="0.9dp"
-          android:layout_marginHorizontal="5dp"
-          android:backgroundTint="@color/blueMain"
-          app:cardCornerRadius="15dp">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingHorizontal="20dp"
-            android:paddingVertical="5dp"
-            android:fontFamily="@font/sofiaprosoftmedium"
-            android:text="@string/world"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
-      </com.google.android.material.card.MaterialCardView>
-
-      <com.google.android.material.card.MaterialCardView
-          android:id="@+id/cvPolitics"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_gravity="center"
-          app:strokeColor="@color/white"
-          app:rippleColor="#99FFFFFF"
-          app:strokeWidth="0.9dp"
-          android:layout_marginHorizontal="5dp"
-          android:backgroundTint="@color/blueMain"
-          app:cardCornerRadius="15dp">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingHorizontal="20dp"
-            android:paddingVertical="5dp"
-            android:fontFamily="@font/sofiaprosoftmedium"
-            android:text="@string/politics"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
-      </com.google.android.material.card.MaterialCardView>
-
-      <com.google.android.material.card.MaterialCardView
-          android:id="@+id/cvTech"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_gravity="center"
-          app:strokeColor="@color/white"
-          app:rippleColor="#99FFFFFF"
-          app:strokeWidth="0.9dp"
-          android:layout_marginHorizontal="5dp"
-          android:backgroundTint="@color/blueMain"
-          app:cardCornerRadius="15dp">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingHorizontal="20dp"
-            android:paddingVertical="5dp"
-            android:fontFamily="@font/sofiaprosoftmedium"
-            android:text="@string/technology"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
-      </com.google.android.material.card.MaterialCardView>
-
-      <com.google.android.material.card.MaterialCardView
-          android:id="@+id/cvEntertainment"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_gravity="center"
-          app:strokeColor="@color/white"
-          app:rippleColor="#99FFFFFF"
-          app:strokeWidth="0.9dp"
-          android:layout_marginHorizontal="5dp"
-          android:backgroundTint="@color/blueMain"
-          app:cardCornerRadius="15dp">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingHorizontal="20dp"
-            android:paddingVertical="5dp"
-            android:fontFamily="@font/sofiaprosoftmedium"
-            android:text="@string/entertainment"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
-      </com.google.android.material.card.MaterialCardView>
-
-      <com.google.android.material.card.MaterialCardView
-          android:id="@+id/cvScience"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_gravity="center"
-          app:strokeColor="@color/white"
-          app:rippleColor="#99FFFFFF"
-          app:strokeWidth="0.9dp"
-          android:layout_marginHorizontal="5dp"
-          android:backgroundTint="@color/blueMain"
-          app:cardCornerRadius="15dp">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingHorizontal="20dp"
-            android:paddingVertical="5dp"
-            android:fontFamily="@font/sofiaprosoftmedium"
-            android:text="@string/science"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
-      </com.google.android.material.card.MaterialCardView>
-    </LinearLayout>
-  </HorizontalScrollView>
-
-  <TextView
-      android:id="@+id/tvNationalNews"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:text="@string/latest_news"
-      android:layout_marginVertical="10dp"
-      android:paddingHorizontal="15dp"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
-  
-  <com.facebook.shimmer.ShimmerFrameLayout
-      android:id="@+id/shimmerEffectHome"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-android:foregroundGravity="center"
-      android:layout_marginTop="10dp"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/tvNationalNews"
-      >
-    <LinearLayout
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-      <include layout="@layout/shimmer_placeholder_home"/>
-      <include layout="@layout/shimmer_placeholder_home"/>
-      <include layout="@layout/shimmer_placeholder_home"/>
-      <include layout="@layout/shimmer_placeholder_home"/>
-      <include layout="@layout/shimmer_placeholder_home"/>
-    </LinearLayout>
-  </com.facebook.shimmer.ShimmerFrameLayout>
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="0dp"
-    android:layout_marginTop="10dp"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/tvNationalNews">
-  <androidx.recyclerview.widget.RecyclerView
-      android:id="@+id/rvNewsHome"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      tools:listitem="@layout/item_home_news"
-      android:paddingHorizontal="10dp"
-      android:layout_marginBottom="50dp"/>
-</LinearLayout>
+        android:animateLayoutChanges="true"
+        android:animationCache="true"
+        android:background="@color/blueMain"
+        android:paddingVertical="10dp"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="5dp"
+                android:backgroundTint="@color/blueMain"
+                app:cardCornerRadius="15dp"
+                app:rippleColor="#99FFFFFF"
+                app:strokeColor="@color/white"
+                app:strokeWidth="0.9dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/sofiaprosoftmedium"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="5dp"
+                    android:text="@string/all"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvNational"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="5dp"
+                android:backgroundTint="@color/blueMain"
+                app:cardCornerRadius="20dp"
+                app:rippleColor="#99FFFFFF"
+                app:strokeColor="@color/white"
+                app:strokeWidth="0.9dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/sofiaprosoftmedium"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="5dp"
+                    android:text="@string/national"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvBusiness"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="5dp"
+                android:backgroundTint="@color/blueMain"
+                app:cardCornerRadius="15dp"
+                app:rippleColor="#99FFFFFF"
+                app:strokeColor="@color/white"
+                app:strokeWidth="0.9dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/sofiaprosoftmedium"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="5dp"
+                    android:text="@string/business"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvSports"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="5dp"
+                android:backgroundTint="@color/blueMain"
+                app:cardCornerRadius="15dp"
+                app:rippleColor="#99FFFFFF"
+                app:strokeColor="@color/white"
+                app:strokeWidth="0.9dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/sofiaprosoftmedium"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="5dp"
+                    android:text="@string/sports"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvWorld"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="5dp"
+                android:backgroundTint="@color/blueMain"
+                app:cardCornerRadius="15dp"
+                app:rippleColor="#99FFFFFF"
+                app:strokeColor="@color/white"
+                app:strokeWidth="0.9dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/sofiaprosoftmedium"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="5dp"
+                    android:text="@string/world"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvPolitics"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="5dp"
+                android:backgroundTint="@color/blueMain"
+                app:cardCornerRadius="15dp"
+                app:rippleColor="#99FFFFFF"
+                app:strokeColor="@color/white"
+                app:strokeWidth="0.9dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/sofiaprosoftmedium"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="5dp"
+                    android:text="@string/politics"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvTech"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="5dp"
+                android:backgroundTint="@color/blueMain"
+                app:cardCornerRadius="15dp"
+                app:rippleColor="#99FFFFFF"
+                app:strokeColor="@color/white"
+                app:strokeWidth="0.9dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/sofiaprosoftmedium"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="5dp"
+                    android:text="@string/technology"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvEntertainment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="5dp"
+                android:backgroundTint="@color/blueMain"
+                app:cardCornerRadius="15dp"
+                app:rippleColor="#99FFFFFF"
+                app:strokeColor="@color/white"
+                app:strokeWidth="0.9dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/sofiaprosoftmedium"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="5dp"
+                    android:text="@string/entertainment"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvScience"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="5dp"
+                android:backgroundTint="@color/blueMain"
+                app:cardCornerRadius="15dp"
+                app:rippleColor="#99FFFFFF"
+                app:strokeColor="@color/white"
+                app:strokeWidth="0.9dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/sofiaprosoftmedium"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="5dp"
+                    android:text="@string/science"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/tvNationalNews"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        android:paddingHorizontal="15dp"
+        android:text="@string/latest_news"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmerEffectHome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:foregroundGravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNationalNews">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include layout="@layout/shimmer_placeholder_home" />
+
+                <include layout="@layout/shimmer_placeholder_home" />
+
+                <include layout="@layout/shimmer_placeholder_home" />
+
+                <include layout="@layout/shimmer_placeholder_home" />
+
+                <include layout="@layout/shimmer_placeholder_home" />
+
+                <include layout="@layout/shimmer_placeholder_home" />
+
+                <include layout="@layout/shimmer_placeholder_home" />
+
+                <include layout="@layout/shimmer_placeholder_home" />
+
+                <include layout="@layout/shimmer_placeholder_home" />
+            </LinearLayout>
+        </ScrollView>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvNewsHome"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:paddingHorizontal="10dp"
+        android:paddingBottom="110dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvNationalNews"
+        tools:itemCount="5"
+        tools:listitem="@layout/item_home_news" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

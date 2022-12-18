@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import dev.redfox.newsapp.adapters.NewsAdapter
 import dev.redfox.newsapp.database.NewsDBViewModel
 import dev.redfox.newsapp.database.NewsDBViewModelFactory
@@ -37,9 +38,9 @@ class HomeFragment : Fragment() {
         NewsRoomDatabase.getNewsDatabase(requireContext())
     }
 
-   private val newsRepository :NewsRepository by lazy {
-       NewsRepository(database.newsDao())
-   }
+    private val newsRepository: NewsRepository by lazy {
+        NewsRepository(database.newsDao())
+    }
 
     @OptIn(DelicateCoroutinesApi::class)
     override fun onCreateView(
@@ -51,18 +52,21 @@ class HomeFragment : Fragment() {
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
 
-         homeViewModel =
-            ViewModelProvider(this,HomeViewModelFactory(repository))[HomeViewModel::class.java]
+        homeViewModel =
+            ViewModelProvider(this, HomeViewModelFactory(repository))[HomeViewModel::class.java]
 
         newsDBViewModel =
-            ViewModelProvider(this,NewsDBViewModelFactory(newsRepository))[NewsDBViewModel::class.java]
+            ViewModelProvider(
+                this,
+                NewsDBViewModelFactory(newsRepository)
+            )[NewsDBViewModel::class.java]
         homeViewModel.getNews("all")
         DisplayNews()
 
         binding.cvAll.setOnClickListener {
             homeViewModel.getNews("all")
             GlobalScope.launch {
-                withContext(Dispatchers.Main){
+                withContext(Dispatchers.Main) {
                     DisplayNews()
                 }
             }
@@ -71,7 +75,7 @@ class HomeFragment : Fragment() {
         binding.cvNational.setOnClickListener {
             homeViewModel.getNews("national")
             GlobalScope.launch {
-                withContext(Dispatchers.Main){
+                withContext(Dispatchers.Main) {
                     DisplayNews()
                 }
             }
@@ -80,7 +84,7 @@ class HomeFragment : Fragment() {
         binding.cvBusiness.setOnClickListener {
             homeViewModel.getNews("business")
             GlobalScope.launch {
-                withContext(Dispatchers.Main){
+                withContext(Dispatchers.Main) {
                     DisplayNews()
                 }
             }
@@ -89,7 +93,7 @@ class HomeFragment : Fragment() {
         binding.cvSports.setOnClickListener {
             homeViewModel.getNews("sports")
             GlobalScope.launch {
-                withContext(Dispatchers.Main){
+                withContext(Dispatchers.Main) {
                     DisplayNews()
                 }
             }
@@ -98,7 +102,7 @@ class HomeFragment : Fragment() {
         binding.cvWorld.setOnClickListener {
             homeViewModel.getNews("world")
             GlobalScope.launch {
-                withContext(Dispatchers.Main){
+                withContext(Dispatchers.Main) {
                     DisplayNews()
                 }
             }
@@ -107,7 +111,7 @@ class HomeFragment : Fragment() {
         binding.cvEntertainment.setOnClickListener {
             homeViewModel.getNews("entertainment")
             GlobalScope.launch {
-                withContext(Dispatchers.Main){
+                withContext(Dispatchers.Main) {
                     DisplayNews()
                 }
             }
@@ -116,7 +120,7 @@ class HomeFragment : Fragment() {
         binding.cvPolitics.setOnClickListener {
             homeViewModel.getNews("politics")
             GlobalScope.launch {
-                withContext(Dispatchers.Main){
+                withContext(Dispatchers.Main) {
                     DisplayNews()
                 }
             }
@@ -125,7 +129,7 @@ class HomeFragment : Fragment() {
         binding.cvScience.setOnClickListener {
             homeViewModel.getNews("science")
             GlobalScope.launch {
-                withContext(Dispatchers.Main){
+                withContext(Dispatchers.Main) {
                     DisplayNews()
                 }
             }
@@ -134,12 +138,11 @@ class HomeFragment : Fragment() {
         binding.cvTech.setOnClickListener {
             homeViewModel.getNews("technology")
             GlobalScope.launch {
-                withContext(Dispatchers.Main){
+                withContext(Dispatchers.Main) {
                     DisplayNews()
                 }
             }
         }
-
 
         return binding.root
     }
@@ -154,26 +157,25 @@ class HomeFragment : Fragment() {
             loadProgress.visibility = View.GONE
             Log.d("statusCode", it.code().toString())
 
-            newsAdapter = NewsAdapter(newsDBViewModel,requireContext(),nData)
+            newsAdapter = NewsAdapter(newsDBViewModel, requireContext(), nData)
 
             var adapter = newsAdapter
 
             adapter.notifyDataSetChanged()
             binding.rvNewsHome.setHasFixedSize(true)
             binding.rvNewsHome.adapter = adapter
-            binding.rvNewsHome.layoutManager = GridLayoutManager(context, 1)
+            binding.rvNewsHome.layoutManager = LinearLayoutManager(context)
             adapter.notifyDataSetChanged()
 
 
             newsAdapter.onItemClick = {
                 val dialog = NewsDetailFragment(it)
                 dialog.setCancelable(true)
-                dialog.show(parentFragmentManager,"NewsBottomSheetDialog")
+                dialog.show(parentFragmentManager, "NewsBottomSheetDialog")
             }
 
         })
     }
-
 
 
     override fun onDestroyView() {

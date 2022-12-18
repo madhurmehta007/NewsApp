@@ -1,5 +1,6 @@
 package dev.redfox.newsapp.ui.saved
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -18,6 +19,7 @@ class SavedNewsFragment : Fragment() {
 
     private var _binding: FragmentSavedNewsBinding? = null
     private lateinit var newsDBViewModel: NewsDBViewModel
+    private lateinit var savedNewsViewModel: SavedNewsViewModel
     private lateinit var savedNewsAdapter: SavedNewsAdapter
     private val binding get() = _binding!!
 
@@ -34,7 +36,7 @@ class SavedNewsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val savedNewsViewModel =
+         savedNewsViewModel =
             ViewModelProvider(this).get(SavedNewsViewModel::class.java)
         _binding = FragmentSavedNewsBinding.inflate(inflater, container, false)
 
@@ -44,9 +46,16 @@ class SavedNewsFragment : Fragment() {
             val newsData: MutableList<News> = it
 
             savedNewsAdapter = SavedNewsAdapter(newsDBViewModel,requireContext(),newsData)
+
+            var adapter = savedNewsAdapter
+
+            adapter.notifyDataSetChanged()
             binding.rvSavedNews.adapter = savedNewsAdapter
             binding.rvSavedNews.setHasFixedSize(true)
             binding.rvSavedNews.layoutManager = GridLayoutManager(context, 2)
+            adapter.notifyDataSetChanged()
+
+
         })
         return binding.root
     }
