@@ -37,6 +37,7 @@ class NewsDetailFragment(val news:Data) : BottomSheetDialogFragment() {
         binding.apply {
             Picasso.get().load(news.imageUrl).into(ivNews)
             tvNewsDetails.text = news.content
+            tvNewsTitle.text = news.title
             tvDate.text = news.date
                 tvReadMore.setOnClickListener {
                     if(news.readMoreUrl!=null){

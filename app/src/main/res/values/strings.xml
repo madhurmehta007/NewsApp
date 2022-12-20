@@ -14,7 +14,10 @@
     <string name="business">Business</string>
     <string name="national">National</string>
     <string name="all">All</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="tip">Tip: \n Press and hold to delete news from the saved section</string>
+
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="saved_news">Saved News</string>
     <string name="saved">Saved</string>

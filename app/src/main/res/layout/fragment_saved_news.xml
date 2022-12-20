@@ -7,18 +7,46 @@
     tools:context=".ui.saved.SavedNewsFragment">
 
     <TextView
+        android:id="@+id/tvBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingBottom="30dp"
+        android:background="@color/blueMain"
+        android:fontFamily="@font/sofiaprosoftmedium"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
         android:id="@+id/textSavedNews"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:paddingTop="10dp"
+        android:paddingStart="10dp"
+        android:paddingBottom="5dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:text="@string/saved_news"
-        android:textSize="20sp"
+        android:layout_marginLeft="10dp"
         android:fontFamily="@font/sofiaprosoftmedium"
+        android:textColor="@color/white"
+        android:text="@string/saved_news"
+        android:textSize="22sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="RtlSymmetry" />
+
+    <ImageView
+        android:id="@+id/ivInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:paddingStart="10dp"
+        android:layout_marginTop="18dp"
+        android:src="@drawable/ic_info"
+        app:layout_constraintBottom_toBottomOf="@id/textSavedNews"
+        app:layout_constraintStart_toEndOf="@id/textSavedNews"/>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,12 +55,13 @@
         android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textSavedNews">
+        app:layout_constraintTop_toBottomOf="@id/tvBackground">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvSavedNews"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:layout_marginBottom="50dp"/>
 
     </LinearLayout>

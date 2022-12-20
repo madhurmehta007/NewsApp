@@ -1,6 +1,10 @@
 package dev.redfox.newsapp.ui.saved
 
+import android.annotation.SuppressLint
 import android.app.AlertDialog
+import android.app.Dialog
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +15,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import dev.redfox.newsapp.R
 import dev.redfox.newsapp.adapters.SavedNewsAdapter
 import dev.redfox.newsapp.database.*
 import dev.redfox.newsapp.databinding.FragmentSavedNewsBinding
@@ -34,6 +39,7 @@ class SavedNewsFragment : Fragment() {
         NewsRepository(database.newsDao())
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -66,6 +72,17 @@ class SavedNewsFragment : Fragment() {
             }
 
         })
+
+        binding.ivInfo.setOnClickListener {
+            val dialogBinding = layoutInflater.inflate(R.layout.info_dialog, null)
+            val dialog = Dialog(requireContext())
+            dialog.setContentView(dialogBinding)
+            dialog.setCancelable(true)
+            dialog.setCanceledOnTouchOutside(true)
+            dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            dialog.show()
+        }
+
         return binding.root
     }
 

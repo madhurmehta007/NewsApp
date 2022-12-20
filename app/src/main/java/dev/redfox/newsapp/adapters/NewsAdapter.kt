@@ -16,7 +16,6 @@ import dev.redfox.newsapp.databinding.ItemHomeNewsBinding
 import dev.redfox.newsapp.models.Data
 import dev.redfox.newsapp.utils.Snacker
 
-
 private lateinit var newsRepository: NewsRepository
 
 class NewsAdapter(
@@ -75,11 +74,12 @@ class NewsAdapter(
 
         }
 
-        holder.binding.ivSave.setOnClickListener {
-            holder.binding.ivSave.visibility = View.GONE
-            holder.binding.ivSaveBorder.visibility = View.VISIBLE
-
-        }
+//        holder.binding.ivSave.setOnClickListener {
+//            holder.binding.ivSave.visibility = View.GONE
+//            holder.binding.ivSaveBorder.visibility = View.VISIBLE
+//
+//
+//        }
 
         holder.binding.cvHomeNews.animation = android.view.animation.AnimationUtils.loadAnimation(
             holder.itemView.context,
