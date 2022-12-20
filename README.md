@@ -10,6 +10,7 @@ It has custom animations and shimmer effect in recyclerview
 - Latest news with date and time can be viewed
 - News can be saved or deleted
 - News from different categories can be viewed
+- Bottom sheet for detailed description of the news
 
 ## 🖼 App Screenshots :
 
